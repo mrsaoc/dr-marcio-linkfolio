@@ -4,9 +4,9 @@ import logo from "@/assets/logo.png";
 import instagramIcon from "@/assets/instagram.png";
 import facebookIcon from "@/assets/facebook.png";
 import whatsappIcon from "@/assets/whatsapp.png";
-import instagramWhite from "@/assets/instagram-white.png.asset.json";
-import facebookWhite from "@/assets/facebook-white.png.asset.json";
-import horarioWhite from "@/assets/horario-white.png.asset.json";
+import instagramWhite from "@/assets/Instagram4.png";
+import facebookWhite from "@/assets/Facebook4.png";
+import horarioWhite from "@/assets/Horário.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -53,8 +53,8 @@ function LinkButton({
       className="relative flex h-[68px] w-full items-center rounded-[28px] bg-[#8c8c8c]/40 px-5 transition-transform hover:scale-[1.01]"
       style={{ backdropFilter: "blur(21px)", WebkitBackdropFilter: "blur(21px)", boxShadow: BUTTON_SHADOW }}
     >
-      <img src={icon} alt="" className="h-11 w-11 shrink-0 object-contain" />
-      <span className="flex-1 pr-11 text-center font-['Poppins',sans-serif] text-[18px] font-semibold text-white">
+      <img src={icon} alt="" className="h-8 w-8 shrink-0 object-contain" />
+      <span className="flex-1 pr-8 text-center font-['Poppins',sans-serif] text-[18px] font-semibold text-white">
         {label}
       </span>
     </a>
@@ -64,7 +64,7 @@ function LinkButton({
 function Index() {
   return (
     <main
-      className="relative min-h-screen w-full bg-cover bg-center bg-no-repeat"
+      className="relative min-h-screen w-full overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${background})` }}
     >
       {/* Teal glows */}
@@ -103,7 +103,7 @@ function Index() {
 
             <div className="mt-6 flex items-center justify-center gap-6">
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/marcioalmeidafisio"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
@@ -111,14 +111,14 @@ function Index() {
                 <img src={instagramIcon} alt="" className="h-11 w-11" />
               </a>
               <a
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/Marcioalmeidafisioquiropraxia"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
               >
                 <img src={facebookIcon} alt="" className="h-11 w-11" />
               </a>
-              <a href="https://wa.me/" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+              <a href="https://api.whatsapp.com/send?phone=5511961852837" target="_blank" rel="noreferrer" aria-label="WhatsApp">
                 <img src={whatsappIcon} alt="" className="h-11 w-11" />
               </a>
             </div>
@@ -150,20 +150,20 @@ function Index() {
             </a>
 
             <LinkButton
-              href="https://wa.me/"
-              icon={horarioWhite.url}
+              href="https://api.whatsapp.com/send?phone=5511961852837"
+              icon={horarioWhite}
               label="Agende seu horário!"
               ariaLabel="Agende seu horário!"
             />
             <LinkButton
-              href="https://www.instagram.com/"
-              icon={instagramWhite.url}
+              href="https://www.instagram.com/marcioalmeidafisio"
+              icon={instagramWhite}
               label="Instagram"
               ariaLabel="Instagram"
             />
             <LinkButton
-              href="https://www.facebook.com/"
-              icon={facebookWhite.url}
+              href="https://www.facebook.com/Marcioalmeidafisioquiropraxia"
+              icon={facebookWhite}
               label="Facebook"
               ariaLabel="Facebook"
             />
