@@ -30,22 +30,16 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="min-h-screen w-full bg-[#a0a0a0] flex items-start justify-center">
-      {/* Fixed 1080x1920 stage, scaled to fit viewport width */}
-      <div
-        className="relative bg-[#a0a0a0] overflow-hidden"
-        style={{
-          width: "1080px",
-          height: "1920px",
-          transformOrigin: "top center",
-          transform: "scale(var(--stage-scale, 1))",
-        }}
-      >
-        <style>{`
-          :root { --stage-scale: 1; }
-          @media (max-width: 1080px) {
-            :root { --stage-scale: calc(100vw / 1080); }
-          }
-        `}</style>
+      <div className="w-full max-w-[1080px]" style={{ aspectRatio: "1080 / 1920" }}>
+        <div
+          className="relative bg-[#a0a0a0] overflow-hidden origin-top-left"
+          style={{
+            width: "1080px",
+            height: "1920px",
+            transform: "scale(calc(100cqw / 1080))",
+          }}
+        >
+
 
         {/* Background photo */}
         <img
