@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock } from "lucide-react";
 import background from "@/assets/background.png";
 import logo from "@/assets/logo.png";
 import instagramIcon from "@/assets/instagram.png";
 import facebookIcon from "@/assets/facebook.png";
 import whatsappIcon from "@/assets/whatsapp.png";
+import instagramWhite from "@/assets/instagram-white.png.asset.json";
+import facebookWhite from "@/assets/facebook-white.png.asset.json";
+import horarioWhite from "@/assets/horario-white.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,7 +31,10 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="min-h-screen w-full bg-[#a0a0a0] flex items-start md:items-center justify-center">
+    <main
+      className="min-h-screen w-full flex items-start md:items-center justify-center bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${background})` }}
+    >
       <div
         className="w-full"
         style={{
@@ -143,8 +148,8 @@ function Index() {
             className="absolute top-[757px] left-[124px] w-[831px] h-[132px] rounded-[39px] bg-[#8c8c8c]/40 flex items-center shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_14px_rgba(0,0,0,0.20),inset_-1px_0_14px_rgba(0,0,0,0.16)]"
             style={{ backdropFilter: "blur(21px)" }}
           >
-            <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center rounded-full bg-white">
-              <Clock className="h-[46px] w-[46px] text-[#00383f]" strokeWidth={2.5} />
+            <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center">
+              <img src={horarioWhite.url} alt="" className="h-[76px] w-[76px]" />
             </span>
             <span className="flex-1 pr-[112px] text-center font-['Poppins',sans-serif] font-semibold text-white text-[28px]">
               Agende seu horário!
@@ -162,7 +167,7 @@ function Index() {
             style={{ backdropFilter: "blur(21px)" }}
           >
             <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center">
-              <img src={instagramIcon} alt="" className="h-[76px] w-[76px]" />
+              <img src={instagramWhite.url} alt="" className="h-[76px] w-[76px]" />
             </span>
             <span className="flex-1 pr-[112px] text-center font-['Poppins',sans-serif] font-semibold text-white text-[28px]">
               Instagram
@@ -180,7 +185,7 @@ function Index() {
             style={{ backdropFilter: "blur(21px)" }}
           >
             <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center">
-              <img src={facebookIcon} alt="" className="h-[76px] w-[76px]" />
+              <img src={facebookWhite.url} alt="" className="h-[76px] w-[76px]" />
             </span>
             <span className="flex-1 pr-[112px] text-center font-['Poppins',sans-serif] font-semibold text-white text-[28px]">
               Facebook
