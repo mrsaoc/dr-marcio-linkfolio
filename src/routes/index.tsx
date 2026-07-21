@@ -179,7 +179,9 @@ function Index() {
             </span>
           </a>
         </nav>
+        </div>
       </div>
     </main>
+
   );
 }
