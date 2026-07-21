@@ -167,7 +167,7 @@ function Index() {
             style={{ backdropFilter: "blur(21px)" }}
           >
             <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center">
-              <img src={instagramIcon} alt="" className="h-[76px] w-[76px]" />
+              <img src={instagramWhite.url} alt="" className="h-[76px] w-[76px]" />
             </span>
             <span className="flex-1 pr-[112px] text-center font-['Poppins',sans-serif] font-semibold text-white text-[28px]">
               Instagram
