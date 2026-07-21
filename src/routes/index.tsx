@@ -148,8 +148,8 @@ function Index() {
             className="absolute top-[757px] left-[124px] w-[831px] h-[132px] rounded-[39px] bg-[#8c8c8c]/40 flex items-center shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_14px_rgba(0,0,0,0.20),inset_-1px_0_14px_rgba(0,0,0,0.16)]"
             style={{ backdropFilter: "blur(21px)" }}
           >
-            <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center rounded-full bg-white">
-              <Clock className="h-[46px] w-[46px] text-[#00383f]" strokeWidth={2.5} />
+            <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center">
+              <img src={horarioWhite.url} alt="" className="h-[76px] w-[76px]" />
             </span>
             <span className="flex-1 pr-[112px] text-center font-['Poppins',sans-serif] font-semibold text-white text-[28px]">
               Agende seu horário!
