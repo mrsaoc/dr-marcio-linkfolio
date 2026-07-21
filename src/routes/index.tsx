@@ -29,8 +29,15 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="min-h-screen w-full bg-[#a0a0a0] flex items-start justify-center">
-      <div className="w-full max-w-[1080px]" style={{ aspectRatio: "1080 / 1920", containerType: "inline-size" }}>
+    <main className="min-h-screen w-full bg-[#a0a0a0] flex items-start md:items-center justify-center">
+      <div
+        className="w-full"
+        style={{
+          width: "min(100vw, calc(100vh * 1080 / 1920))",
+          aspectRatio: "1080 / 1920",
+          containerType: "inline-size",
+        }}
+      >
         <div
           className="relative bg-[#a0a0a0] overflow-hidden origin-top-left"
           style={{
@@ -39,6 +46,7 @@ function Index() {
             transform: "scale(calc(100cqw / 1080))",
           }}
         >
+
 
 
         {/* Background photo */}
@@ -153,8 +161,8 @@ function Index() {
             className="absolute top-[913px] left-[124px] w-[831px] h-[132px] rounded-[39px] bg-[#8c8c8c]/40 flex items-center shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_14px_rgba(0,0,0,0.20),inset_-1px_0_14px_rgba(0,0,0,0.16)]"
             style={{ backdropFilter: "blur(21px)" }}
           >
-            <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center rounded-full bg-white">
-              <img src={instagramIcon} alt="" className="h-[52px] w-[52px]" />
+            <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center">
+              <img src={instagramIcon} alt="" className="h-[76px] w-[76px]" />
             </span>
             <span className="flex-1 pr-[112px] text-center font-['Poppins',sans-serif] font-semibold text-white text-[28px]">
               Instagram
@@ -171,13 +179,14 @@ function Index() {
             className="absolute top-[1069px] left-[124px] w-[831px] h-[132px] rounded-[39px] bg-[#8c8c8c]/40 flex items-center shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_14px_rgba(0,0,0,0.20),inset_-1px_0_14px_rgba(0,0,0,0.16)]"
             style={{ backdropFilter: "blur(21px)" }}
           >
-            <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center rounded-full bg-white">
-              <img src={facebookIcon} alt="" className="h-[56px] w-[56px]" />
+            <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center">
+              <img src={facebookIcon} alt="" className="h-[76px] w-[76px]" />
             </span>
             <span className="flex-1 pr-[112px] text-center font-['Poppins',sans-serif] font-semibold text-white text-[28px]">
               Facebook
             </span>
           </a>
+
         </nav>
         </div>
       </div>
