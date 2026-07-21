@@ -31,7 +31,10 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="min-h-screen w-full bg-[#a0a0a0] flex items-start md:items-center justify-center">
+    <main
+      className="min-h-screen w-full flex items-start md:items-center justify-center bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${background})` }}
+    >
       <div
         className="w-full"
         style={{
