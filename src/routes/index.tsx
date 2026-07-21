@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Clock } from "lucide-react";
 import background from "@/assets/background.png";
 import logo from "@/assets/logo.png";
 import instagramIcon from "@/assets/instagram.png";
 import facebookIcon from "@/assets/facebook.png";
 import whatsappIcon from "@/assets/whatsapp.png";
-import horarioIcon from "@/assets/horario.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -15,10 +15,7 @@ export const Route = createFileRoute("/")({
         content:
           "Bem-estar integrado em fisioterapia e estética. Agende seu horário com Dr. Márcio Almeida.",
       },
-      {
-        property: "og:title",
-        content: "marcioalmeidafisio | Dr. Márcio Almeida",
-      },
+      { property: "og:title", content: "marcioalmeidafisio | Dr. Márcio Almeida" },
       {
         property: "og:description",
         content: "Bem-estar integrado em fisioterapia e estética.",
@@ -30,139 +27,164 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const socials = [
-  { href: "https://www.instagram.com/", icon: instagramIcon, label: "Instagram" },
-  { href: "https://www.facebook.com/", icon: facebookIcon, label: "Facebook" },
-  { href: "https://wa.me/", icon: whatsappIcon, label: "WhatsApp" },
-];
-
-const links = [
-  {
-    id: "community",
-    title: "Marcio Almeida | Condições Exclusivas",
-    subtitle: "Entre na nossa comunidade.",
-    href: "#community",
-    highlight: true,
-  },
-  {
-    id: "appointment",
-    title: "Agende seu horário!",
-    href: "https://wa.me/",
-    icon: horarioIcon,
-  },
-  {
-    id: "instagram",
-    title: "Instagram",
-    href: "https://www.instagram.com/",
-    icon: instagramIcon,
-  },
-  {
-    id: "facebook",
-    title: "Facebook",
-    href: "https://www.facebook.com/",
-    icon: facebookIcon,
-  },
-];
-
 function Index() {
   return (
-    <main
-      className="relative min-h-screen w-full overflow-hidden bg-[#a0a0a0] bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${background})` }}
-    >
-      {/* Ambient teal glows */}
+    <main className="min-h-screen w-full bg-[#a0a0a0] flex items-start justify-center">
+      {/* Fixed 1080x1920 stage, scaled to fit viewport width */}
       <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-[20%] -left-[25%] h-[60vw] w-[60vw] rounded-full bg-[#00a9bf]/45 blur-[94px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[30%] -right-[15%] h-[60vw] w-[60vw] rounded-full bg-[#00a9bf]/45 blur-[94px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-[-25%] -left-[25%] h-[60vw] w-[60vw] rounded-full bg-[#00a9bf]/45 blur-[94px]"
-      />
+        className="relative bg-[#a0a0a0] overflow-hidden"
+        style={{
+          width: "1080px",
+          height: "1920px",
+          transformOrigin: "top center",
+          transform: "scale(var(--stage-scale, 1))",
+        }}
+      >
+        <style>{`
+          :root { --stage-scale: 1; }
+          @media (max-width: 1080px) {
+            :root { --stage-scale: calc(100vw / 1080); }
+          }
+        `}</style>
 
-      <div className="relative flex min-h-screen items-start justify-center px-4 py-6 sm:py-10">
+        {/* Background photo */}
+        <img
+          src={background}
+          alt=""
+          aria-hidden="true"
+          className="absolute top-0 left-0 w-[1080px] h-[1920px] object-cover"
+        />
+
+        {/* Teal glows */}
+        <div
+          aria-hidden="true"
+          className="absolute top-[-351px] left-[-382px] w-[723px] h-[723px] rounded-full bg-[#00a9bf]/45 blur-[94px]"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute top-[650px] left-[792px] w-[723px] h-[723px] rounded-full bg-[#00a9bf]/45 blur-[94px]"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute top-[1479px] left-[-362px] w-[723px] h-[723px] rounded-full bg-[#00a9bf]/45 blur-[94px]"
+        />
+
         {/* Glass card */}
         <div
-          className="relative w-full max-w-[520px] rounded-[22px] border border-white/40 bg-white/40 px-6 py-10 shadow-[0_10px_40px_rgba(0,0,0,0.15)] backdrop-blur-[18px] sm:px-10 sm:py-12"
-          style={{
-            backgroundImage:
-              "linear-gradient(179deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.15) 100%)",
-          }}
-        >
-          <header className="flex flex-col items-center text-center">
-            <img
-              src={logo}
-              alt="Símbolo de Dr. Márcio Almeida"
-              className="h-[88px] w-[88px] object-contain sm:h-[110px] sm:w-[110px]"
-            />
-            <h1 className="mt-5 font-['Poppins',sans-serif] text-3xl font-semibold tracking-tight text-[#00717f] sm:text-4xl">
-              marcioalmeidafisio
-            </h1>
-            <p className="mt-2 font-['Poppins',sans-serif] text-base font-medium text-[#00383f] sm:text-lg">
-              Bem-estar integrado em fisioterapia e estética.
-            </p>
+          aria-hidden="true"
+          className="absolute top-[79px] left-[68px] w-[944px] h-[1866px] rounded-[15px] border border-white/25 bg-white/40"
+          style={{ backdropFilter: "blur(17.5px)" }}
+        />
 
-            <div className="mt-5 flex items-center justify-center gap-5">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={s.label}
-                  className="transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#00717f]"
-                >
-                  <img src={s.icon} alt="" className="h-7 w-7 object-contain" />
-                </a>
-              ))}
-            </div>
-          </header>
+        {/* Header */}
+        <header className="absolute top-[133px] left-0 w-[1080px] flex flex-col items-center">
+          <img
+            src={logo}
+            alt="Símbolo de Dr. Márcio Almeida"
+            className="w-[135px] h-[135px] object-contain"
+          />
+          <h1 className="mt-[35px] font-['Poppins',sans-serif] font-semibold text-[#00717f] text-[64px] leading-none tracking-tight">
+            marcioalmeidafisio
+          </h1>
+          <p className="mt-[24px] font-['Poppins',sans-serif] font-medium text-[#00383f] text-[28px] leading-none">
+            Bem-estar integrado em fisioterapia e estética.
+          </p>
 
-          <nav aria-label="Links de Marcio Almeida Fisioterapia" className="mt-8 flex flex-col gap-4">
-            {links.map((link) => {
-              const isHighlight = link.highlight;
-              return (
-                <a
-                  key={link.id}
-                  id={link.id}
-                  href={link.href}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                  aria-label={
-                    link.subtitle ? `${link.title}. ${link.subtitle}` : link.title
-                  }
-                  className={[
-                    "relative flex items-center gap-4 rounded-[22px] px-5 py-4 backdrop-blur-[21px] transition-transform hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4",
-                    "shadow-[inset_0_1px_0_rgba(255,255,255,0.4),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_14px_rgba(0,0,0,0.2),inset_-1px_0_14px_rgba(0,0,0,0.16)]",
-                    isHighlight ? "bg-[#00b2c9]/60" : "bg-[#8c8c8c]/40",
-                  ].join(" ")}
-                >
-                  {link.icon ? (
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/90">
-                      <img src={link.icon} alt="" className="h-5 w-5 object-contain" />
-                    </span>
-                  ) : (
-                    <span className="w-0 shrink-0" aria-hidden="true" />
-                  )}
-                  <span className="flex flex-1 flex-col items-center pr-4 text-center">
-                    <span className="font-['Poppins',sans-serif] text-lg font-semibold text-white sm:text-xl">
-                      {link.title}
-                    </span>
-                    {link.subtitle ? (
-                      <span className="font-['Poppins',sans-serif] text-sm font-normal text-white/95 sm:text-base">
-                        {link.subtitle}
-                      </span>
-                    ) : null}
-                  </span>
-                </a>
-              );
-            })}
-          </nav>
-        </div>
+          <div className="mt-[40px] flex items-center justify-center gap-[36px]">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+            >
+              <img src={instagramIcon} alt="" className="w-[62px] h-[62px]" />
+            </a>
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+            >
+              <img src={facebookIcon} alt="" className="w-[62px] h-[62px]" />
+            </a>
+            <a href="https://wa.me/" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+              <img src={whatsappIcon} alt="" className="w-[62px] h-[62px]" />
+            </a>
+          </div>
+        </header>
+
+        {/* Links */}
+        <nav aria-label="Links de Marcio Almeida Fisioterapia">
+          {/* Highlight button */}
+          <a
+            id="community"
+            href="#community"
+            aria-label="Marcio Almeida | Condições Exclusivas. Entre na nossa comunidade."
+            className="absolute top-[601px] left-[124px] w-[831px] h-[132px] rounded-[39px] bg-[#00b2c9]/60 flex flex-col items-center justify-center shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_14px_rgba(0,0,0,0.20),inset_-1px_0_14px_rgba(0,0,0,0.16)]"
+            style={{ backdropFilter: "blur(21px)" }}
+          >
+            <span className="font-['Poppins',sans-serif] font-semibold text-white text-[28px]">
+              Marcio Almeida | Condições Exclusivas
+            </span>
+            <span className="mt-[6px] font-['Poppins',sans-serif] font-normal text-white text-[20px]">
+              Entre na nossa comunidade.
+            </span>
+          </a>
+
+          {/* Appointment */}
+          <a
+            id="appointment"
+            href="https://wa.me/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Agende seu horário!"
+            className="absolute top-[757px] left-[124px] w-[831px] h-[132px] rounded-[39px] bg-[#8c8c8c]/40 flex items-center shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_14px_rgba(0,0,0,0.20),inset_-1px_0_14px_rgba(0,0,0,0.16)]"
+            style={{ backdropFilter: "blur(21px)" }}
+          >
+            <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center rounded-full bg-white">
+              <Clock className="h-[46px] w-[46px] text-[#00383f]" strokeWidth={2.5} />
+            </span>
+            <span className="flex-1 pr-[112px] text-center font-['Poppins',sans-serif] font-semibold text-white text-[28px]">
+              Agende seu horário!
+            </span>
+          </a>
+
+          {/* Instagram */}
+          <a
+            id="instagram"
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+            className="absolute top-[913px] left-[124px] w-[831px] h-[132px] rounded-[39px] bg-[#8c8c8c]/40 flex items-center shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_14px_rgba(0,0,0,0.20),inset_-1px_0_14px_rgba(0,0,0,0.16)]"
+            style={{ backdropFilter: "blur(21px)" }}
+          >
+            <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center rounded-full bg-white">
+              <img src={instagramIcon} alt="" className="h-[52px] w-[52px]" />
+            </span>
+            <span className="flex-1 pr-[112px] text-center font-['Poppins',sans-serif] font-semibold text-white text-[28px]">
+              Instagram
+            </span>
+          </a>
+
+          {/* Facebook */}
+          <a
+            id="facebook"
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook"
+            className="absolute top-[1069px] left-[124px] w-[831px] h-[132px] rounded-[39px] bg-[#8c8c8c]/40 flex items-center shadow-[inset_0_1px_0_rgba(255,255,255,0.40),inset_1px_0_0_rgba(255,255,255,0.32),inset_0_-1px_14px_rgba(0,0,0,0.20),inset_-1px_0_14px_rgba(0,0,0,0.16)]"
+            style={{ backdropFilter: "blur(21px)" }}
+          >
+            <span className="ml-[36px] flex h-[76px] w-[76px] items-center justify-center rounded-full bg-white">
+              <img src={facebookIcon} alt="" className="h-[56px] w-[56px]" />
+            </span>
+            <span className="flex-1 pr-[112px] text-center font-['Poppins',sans-serif] font-semibold text-white text-[28px]">
+              Facebook
+            </span>
+          </a>
+        </nav>
       </div>
     </main>
   );
