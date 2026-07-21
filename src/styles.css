@@ -142,3 +142,11 @@
     color: var(--color-foreground);
   }
 }
+
+/* Hide Lovable badge on published site */
+#lovable-badge,
+[data-lovable-badge],
+a[href*="lovable.dev"][href*="badge"] {
+  display: none !important;
+}
+
