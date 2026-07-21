@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="min-h-screen w-full bg-[#a0a0a0] flex items-start justify-center">
-      <div className="w-full max-w-[1080px]" style={{ aspectRatio: "1080 / 1920" }}>
+      <div className="w-full max-w-[1080px]" style={{ aspectRatio: "1080 / 1920", containerType: "inline-size" }}>
         <div
           className="relative bg-[#a0a0a0] overflow-hidden origin-top-left"
           style={{
