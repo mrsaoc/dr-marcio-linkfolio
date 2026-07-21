@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock } from "lucide-react";
 import background from "@/assets/background.png";
 import logo from "@/assets/logo.png";
 import instagramIcon from "@/assets/instagram.png";
 import facebookIcon from "@/assets/facebook.png";
 import whatsappIcon from "@/assets/whatsapp.png";
+import instagramWhite from "@/assets/instagram-white.png.asset.json";
+import facebookWhite from "@/assets/facebook-white.png.asset.json";
+import horarioWhite from "@/assets/horario-white.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
