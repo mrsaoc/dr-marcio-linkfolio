@@ -132,19 +132,21 @@ function Index() {
             {/* Highlight button */}
             <a
               id="community"
-              href="#community"
+              href="https://chat.whatsapp.com/FvRerkIVPN5Axiv7hSkzea"
+              target="_blank"
+              rel="noreferrer"
               aria-label="Marcio Almeida | Condições Exclusivas. Entre na nossa comunidade."
-              className="flex h-[68px] flex-col items-center justify-center rounded-[28px] bg-[#00b2c9]/60 transition-transform hover:scale-[1.01]"
+              className="flex h-[68px] flex-col items-center justify-center rounded-[28px] bg-[#00b2c9]/60 px-4 transition-transform hover:scale-[1.01]"
               style={{
                 backdropFilter: "blur(21px)",
                 WebkitBackdropFilter: "blur(21px)",
                 boxShadow: BUTTON_SHADOW,
               }}
             >
-              <span className="font-['Poppins',sans-serif] text-[15px] font-semibold text-white sm:text-[16px]">
+              <span className="text-center font-['Poppins',sans-serif] text-[13px] font-semibold leading-tight text-white sm:text-[16px]">
                 Marcio Almeida | Condições Exclusivas
               </span>
-              <span className="mt-0.5 font-['Poppins',sans-serif] text-[12px] font-normal text-white sm:text-[13px]">
+              <span className="mt-0.5 text-center font-['Poppins',sans-serif] text-[11px] font-normal text-white sm:text-[13px]">
                 Entre na nossa comunidade.
               </span>
             </a>
